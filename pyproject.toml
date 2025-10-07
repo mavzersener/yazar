@@ -1,0 +1,20 @@
+
+[project]
+name = "yazar-ajan"
+version = "0.9.1"
+description = "Local, multi-agent writing framework (ControllerAgent included)"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name="Your Name"}]
+dependencies = [
+  "typer>=0.12.3",
+  "pydantic>=2.8.0",
+  "python-docx>=1.1.2",
+  "rich>=13.7.1",
+]
+
+[project.scripts]
+yazar = "cli.yazar:app"
+
+[project.entry-points."yazar_ajan.exporter"]
+docx = "yazar_ajan.adapters.export_docx:DocxExporter"
